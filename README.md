@@ -17,7 +17,7 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Projeto inicializado
-- [ ] Header: Visualização da quantidade dos itens no carrinho
+- [x] Header: Visualização da quantidade dos itens no carrinho
 - [ ] Home: Renderizar os produtos com título, preço e quantidade adicionada ao carrinho
 - [ ] Home: Adicionar um produto ao carrinho
 - [ ] Cart: Renderizar uma tabela com imagem, título, preço, quantidade e subtotal, total, adicionar mais quantidade de um produto, diminuir a quantidade de um produto e remover um produto
