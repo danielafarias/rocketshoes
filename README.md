@@ -32,6 +32,7 @@ Foram usadas as seguintes tecnologias:
 - TypeScript;
 - Styled-components;
 - JSON-server;
+- Axios;
 
 ## 🚀 Instalando `<rocketshoes>`
 
