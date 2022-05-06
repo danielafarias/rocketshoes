@@ -30,8 +30,6 @@ Foram usadas as seguintes tecnologias:
 
 - ReactJS;
 - TypeScript;
-- Webpack;
-- Babel;
 - Styled-components;
 - MirageJS;
 
