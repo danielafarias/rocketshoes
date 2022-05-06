@@ -23,38 +23,46 @@ const CartContext = createContext<CartContextData>({} as CartContextData);
 
 export function CartProvider({ children }: CartProviderProps): JSX.Element {
   const [cart, setCart] = useState<Product[]>(() => {
-    // const storagedCart = Buscar dados do localStorage
+    const storagedCart = localStorage.getItem('@RocketShoes:cart')
 
-    // if (storagedCart) {
-    //   return JSON.parse(storagedCart);
-    // }
+    if (storagedCart) {
+      return JSON.parse(storagedCart);
+    }
 
-    return [
-      {
-        id: 1,
-        title: "Tênis de Caminhada Leve Confortável",
-        price: 179.9,
-        image:
-          "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg",
-        amount: 1,
-      },
-      {
-        id: 2,
-        title: "Tênis VR Caminhada Confortável Detalhes Couro Masculino",
-        price: 139.9,
-        image:
-          "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg",
-        amount: 3,
-      },
-    ];
+    return [];
   });
 
   const addProduct = async (productId: number) => {
     console.log(productId);
     try {
-      // TODO
+     const newCart = [...cart];
+     const productExists = newCart.find(p => p.id === productId);
+
+     const stock = await api.get(`stock/${productId}`);
+
+     const amount = productExists ? productExists.amount : 0;
+
+     if (amount > stock.data.amount) {
+      toast.error('Quantidade solicitada fora de estoque');
+      return;
+     }
+
+     if (productExists) {
+      productExists.amount = amount + 1;
+     } else {
+      const product = await api.get(`products/${productId}`);
+
+      newCart.push( {
+        ...product.data,
+        amount: 1
+      });
+     }
+
+     localStorage.setItem('@RocketShoes:cart', JSON.stringify(newCart));
+     setCart(newCart);
+
     } catch {
-      // TODO
+      toast.error('Erro na adição do produto');
     }
   };
 
@@ -75,7 +83,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     try {
       // TODO
     } catch {
-      // TODO
+      toast.error('Erro na remoção do produto');
     }
   };
 
