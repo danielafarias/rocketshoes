@@ -31,7 +31,7 @@ Foram usadas as seguintes tecnologias:
 - ReactJS;
 - TypeScript;
 - Styled-components;
-- MirageJS;
+- JSON-server;
 
 ## 🚀 Instalando `<rocketshoes>`
 
