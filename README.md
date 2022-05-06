@@ -21,8 +21,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Home: Renderizar os produtos com título, preço e quantidade adicionada ao carrinho
 - [x] Home: Adicionar um produto ao carrinho
 - [x] Cart: Renderizar uma tabela com imagem, título, preço, quantidade e subtotal, total, adicionar mais quantidade de um produto, diminuir a quantidade de um produto e remover um produto
-- [ ] useCart: retornar items do carrinho pelo localStorage, adicionar o produto no carrinho, manipular o toastify, remover um produto do carrinho, atualizar o carrinho
-- [ ] Projeto Finalizado
+- [x] useCart: retornar items do carrinho pelo localStorage, adicionar o produto no carrinho, manipular o toastify, remover um produto do carrinho, atualizar o carrinho
+- [x] Projeto Finalizado
 
 ## 💻 Tecnologias
 
