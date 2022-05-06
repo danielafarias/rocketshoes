@@ -36,8 +36,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         price: 179.9,
         image:
           "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis1.jpg",
-        priceFormatted: "R$ 179,90",
-        amount: 2,
+        amount: 1,
       },
       {
         id: 2,
@@ -45,7 +44,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         price: 139.9,
         image:
           "https://rocketseat-cdn.s3-sa-east-1.amazonaws.com/modulo-redux/tenis2.jpg",
-        priceFormatted: "R$ 139,90",
         amount: 3,
       },
     ];
@@ -61,6 +59,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
   };
 
   const removeProduct = (productId: number) => {
+    console.log(productId);
     try {
       // TODO
     } catch {
@@ -72,6 +71,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
     productId,
     amount,
   }: UpdateProductAmount) => {
+    console.log(productId, amount);
     try {
       // TODO
     } catch {
